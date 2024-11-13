@@ -8,3 +8,12 @@ body {
 * {
   box-sizing: border-box;
 }
+
+/* Nick */
+:root {
+  --dark-color: #000000;
+  --background-color: #34385a;
+  --med-text-color: #888787;
+  --light-text-color: #ffffff;
+  --highlight-red: #8b0419;
+}
