@@ -2,11 +2,14 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 // import { useEffect } from 'react';
 // require("dotenv").config();
+import { useDispatch } from "react-redux";
+import { loginUser } from "../reducers/user";
 
 function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [machineName, setMachineName] = useState("");
+  const dispatch = useDispatch();
   useEffect(() => {
     console.log(
       `process.env.NEXT_PUBLIC_API_BASE_URL: ${process.env.NEXT_PUBLIC_API_BASE_URL}`
@@ -28,8 +31,24 @@ function Home() {
 
     document.title = "404 for ";
   }, []); // The empty array ensures this runs only on mount
-  const handleClickReg = () => {
+
+  const handleClickReg = async () => {
     console.log("- handleClickReg 👀");
+    const bodyObj = { email, password };
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bodyObj),
+      }
+    );
+    const resJson = await response.json();
+    console.log("received response");
+    console.log(resJson);
+    dispatch(loginUser(resJson));
+
+    console.log("🚨 after the fetch ");
   };
 
   return (
