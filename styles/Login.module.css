@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 0;
+  background-color: var(--background-color);
+}
+
+.divMainSub {
+  /* background-color: gray; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.divTitles {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 4rem;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--light-text-color);
+}
+
+.divInputsAndBtns {
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-end;
+}
+
+.inputEmail {
+  border-radius: 12px;
+  font-size: xx-large;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btnLogin {
+  background-color: var(--highlight-green);
+  border-radius: 12px;
+  font-size: xx-large;
+  padding: 1rem;
+  width: 15rem;
+  color: var(--light-text-color);
+}
+.divBtnNotReg {
+  padding-top: 2rem;
+  /* background-color: red;
+  margin-top: 3rem; */
+}
+.btnNotReg {
+  font-size: x-large;
+}
