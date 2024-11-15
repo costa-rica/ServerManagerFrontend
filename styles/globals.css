@@ -19,3 +19,7 @@ body {
   --highlight-green: #4ad22b;
   --highlight-yellow: #fa9f15;
 }
+
+h2 {
+  color: var(--med-text-color);
+}

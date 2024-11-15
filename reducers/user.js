@@ -5,6 +5,7 @@ const initialState = {
     username: null,
     email: null,
     role: null,
+    machineName: null,
   },
 };
 
@@ -12,6 +13,9 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    setMachineNameRedux: (state, action) => {
+      state.value.machineName = action.payload;
+    },
     loginUser: (state, action) => {
       console.log(`- dans Redux: loginUser 🔔`);
       state.value.username = action.payload.username;
@@ -27,5 +31,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { loginUser, logoutUser } = userSlice.actions;
+export const { setMachineNameRedux, loginUser, logoutUser } = userSlice.actions;
 export default userSlice.reducer;
